@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
+
 
 namespace ItStepTasks
 {
@@ -8,8 +7,9 @@ namespace ItStepTasks
     {
         static void Main(string[] args)
         {
-            Task11 task = new Task11();
+            Task12 task = new Task12();
             task.DoAction();
+            
 
             Console.ReadLine();
         }

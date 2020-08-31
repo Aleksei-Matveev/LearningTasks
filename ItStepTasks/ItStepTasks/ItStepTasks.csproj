@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
     <Compile Include="Task09.cs" />
     <Compile Include="Task10.cs" />
     <Compile Include="Task11.cs" />
+    <Compile Include="Task12.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

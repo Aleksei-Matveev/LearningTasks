@@ -16,11 +16,37 @@ using System.Numerics;
  */
 namespace ItStepTasks
 {
+    class MyType
+    {
+        private int a;
+        private int b;
+        private int x;
+        private int y;
+
+        public MyType(int A, int B)
+        {
+            this.a = A;
+            this.b = B;
+        }
+        public static MyType Parse(string s)
+        {
+            string[] result = s.Split(',');
+            if (result.Length > 2) throw new FormatException("Не верный ввод");
+            return new MyType(int.Parse(result[0]), int.Parse(result[1]));
+        }
+        public override string ToString()
+        {
+            return $"{a}x + {b}x = 0";
+        }
+    }
+
     class Task12
     {
         public void DoAction()
         {
-            
+            Console.WriteLine(MyType.Parse("1 12"));
+            MyType myType = new MyType(4, 6);
+            Console.WriteLine(myType);
 
         }
     }

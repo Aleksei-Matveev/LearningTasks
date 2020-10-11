@@ -34,11 +34,9 @@ namespace ItStepTasks
             if (s.Split(',').Length != 2 )
             {
                 if (s.Split(' ').Length != 2)
-                    throw new FormatException("Лишний пробел");
+                    throw new FormatException("Неверный ввод");
                 else
-                    result = s.Split(' ');
-                throw new FormatException("Лишняя запятая");
-
+                    result = s.Split(' ');    
             }
             else
             {
@@ -51,7 +49,6 @@ namespace ItStepTasks
             }
             catch (Exception)
             {
-
                 throw new FormatException("Используйте только целые цисла");
             }
             

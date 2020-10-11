@@ -30,9 +30,31 @@ namespace ItStepTasks
         }
         public static MyType Parse(string s)
         {
-            string[] result = s.Split(',');
-            if (result.Length > 2) throw new FormatException("Не верный ввод");
-            return new MyType(int.Parse(result[0]), int.Parse(result[1]));
+            string[] result;
+            if (s.Split(',').Length != 2 )
+            {
+                if (s.Split(' ').Length != 2)
+                    throw new FormatException("Лишний пробел");
+                else
+                    result = s.Split(' ');
+                throw new FormatException("Лишняя запятая");
+
+            }
+            else
+            {
+                result = s.Split(',');
+            }
+
+            try
+            {
+                return new MyType(int.Parse(result[0]), int.Parse(result[1]));
+            }
+            catch (Exception)
+            {
+
+                throw new FormatException("Используйте только целые цисла");
+            }
+            
         }
         public override string ToString()
         {
@@ -44,10 +66,8 @@ namespace ItStepTasks
     {
         public void DoAction()
         {
-            Console.WriteLine(MyType.Parse("1 12"));
-            MyType myType = new MyType(4, 6);
-            Console.WriteLine(myType);
-
+            Console.WriteLine("Введи два коэфициента через запятую или пробел");
+            Console.WriteLine($"Результат :{MyType.Parse(Console.ReadLine())}");
         }
     }
 }
